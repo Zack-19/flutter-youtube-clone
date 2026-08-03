@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "99990800267",
+    "project_id": "youtube-z-clone",
+    "storage_bucket": "youtube-z-clone.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99990800267:android:4f3e94f4c284feee3f518e",
+        "android_client_info": {
+          "package_name": "com.example.youtube_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYCtfOs-3KkrGtbBksQ-opktnLMd-agpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
