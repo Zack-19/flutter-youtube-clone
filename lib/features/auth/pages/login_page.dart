@@ -20,7 +20,14 @@ class LoginPage extends StatelessWidget {
             fontSize: 30,
             fontWeight: FontWeight.bold,
             color: Colors.blueGrey,
-          ),)
+          ),),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 55),
+            child: GestureDetector(
+              onTap:(){},
+              child: Image.asset("assets/images/signinwithgoogle.png",height : 60)),
+          ),
 
         ],
       ),)),

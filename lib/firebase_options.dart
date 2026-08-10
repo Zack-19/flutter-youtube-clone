@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: '000000000000000000000000000000000000000',
-    appId: '0000000000000000000000000000000000000000',
-    messagingSenderId: '0000000000000000',
-    projectId: 'yyyyyyyyyyy',
-    authDomain: '0000000000000000',
-    storageBucket: '00000000000000000000000000000000',
+    apiKey: 'AIzaSyDKFqdO4BN80EZ7lpCwRq9gp9J4m42bDps',
+    appId: '1:99990800267:web:c8be4caf438133fa3f518e',
+    messagingSenderId: '99990800267',
+    projectId: 'youtube-z-clone',
+    authDomain: 'z-clone.firebaseapp.com',
+    storageBucket: 'youtube-z-clone.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '0000000000000000000000000000000000000000000',
-    appId: '0000000000000000000000000000000000000000000',
-    messagingSenderId: '0000000000',
-    projectId: '000000000000000',
-    storageBucket: '0000000000000000000000000000000000',
+    apiKey: 'AIzaSyBYCtfOs-3KkrGtbBksQ-opktnLMd-agpI',
+    appId: '1:99990800267:android:4f3e94f4c284feee3f518e',
+    messagingSenderId: '99990800267',
+    projectId: 'youtube-z-clone',
+    storageBucket: 'youtube-z-clone.firebasestorage.app',
   );
 }
