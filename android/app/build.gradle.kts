@@ -11,6 +11,7 @@ plugins {
 android {
     namespace = "com.example.youtube_clone"
     compileSdk = flutter.compileSdkVersion
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
