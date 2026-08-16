@@ -22,6 +22,21 @@ class UserModel {
     required this.description, 
     required this.type});
 
+    Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'displayName': displayName,
+      'username': username,
+      'email': email,
+      'profilePic': profilePic,
+      'subscriptions': subscriptions,
+      'videos': videos,
+      'userId': userId,
+      'description': description,
+      'type': type,
+    };
+  }
+
+
    factory UserModel.fromMap(Map<String,dynamic> map){
     return UserModel(
       displayName: map['displayName'] as String,
@@ -38,7 +53,7 @@ class UserModel {
   } 
 
   String toJson()=>json.encode(toMap());
-  factory UserModel.fromJson(String source)=>UserModel.fromMap(json.decoder(source)as )
+  factory UserModel.fromJson(String source)=>UserModel.fromMap(json.decoder(source)as)
 }
 
  
