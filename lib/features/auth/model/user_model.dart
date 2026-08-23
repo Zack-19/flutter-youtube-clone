@@ -5,13 +5,13 @@ class UserModel {
   final String username;
   final String email;
   final String profilePic;
-  final String subscriptions;
-  final String videos;
+  final List<String> subscriptions;
+  final int videos;
   final String userId;
   final String description;
   final String type;
 
-  UserModel({
+    UserModel({
     required this.displayName, 
     required this.username, 
     required this.email, 
@@ -28,7 +28,7 @@ class UserModel {
       'username': username,
       'email': email,
       'profilePic': profilePic,
-      'subscriptions': subscriptions,
+      //'subscriptions': subscriptions,
       'videos': videos,
       'userId': userId,
       'description': description,
@@ -43,8 +43,9 @@ class UserModel {
       username: map['username'] as String,
       email: map['email'] as String,
       profilePic: map['profilePic'] as String,
-      subscriptions: map['subscriptions'] as String,
-      videos: map['videos'] as String,
+      //subscriptions:  List<String>.from(map['subscriptions'] as List<String>),
+      subscriptions:  List<String>.from(map['subscriptions']??[]),
+      videos: map['videos'] as int,
       userId: map['userId'] as String,
       description: map['description'] as String,
       type: map['type'] as String,
@@ -52,8 +53,12 @@ class UserModel {
     );
   } 
 
-  String toJson()=>json.encode(toMap());
-  factory UserModel.fromJson(String source)=>UserModel.fromMap(json.decoder(source)as)
+  /*String toJson()=>json.encode(toMap());
+  factory UserModel.fromJson(String source) =>
+    UserModel.fromMap(json.decode(source) as Map<String, dynamic>);*/
+
+
+    
 }
 
  
