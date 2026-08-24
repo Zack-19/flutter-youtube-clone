@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_clone/cores/screens/loader.dart';
 import 'package:youtube_clone/features/auth/pages/login_page.dart';
 import 'package:youtube_clone/features/auth/pages/username_page.dart';
+import 'package:youtube_clone/features/channel/my_channel/pages/my_channel_screen.dart';
 import 'package:youtube_clone/firebase_options.dart';
 import 'package:youtube_clone/home_page.dart';
 
@@ -43,7 +44,8 @@ class MyApp extends ConsumerWidget {
               }else if (snapshot.connectionState == ConnectionState.waiting){
             return Loader();
           }
-              return HomePage();
+              //return HomePage();
+              return MyChannelScreen();
             });
         }
         ),
