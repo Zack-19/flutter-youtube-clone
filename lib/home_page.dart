@@ -63,7 +63,12 @@ class HomePage extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 14,
                           backgroundColor: Colors.grey,
-                          backgroundImage: CachedNetworkImageProvider(currentUser.profilePic),
+                          backgroundImage: currentUser.profilePic.isNotEmpty
+                            ? CachedNetworkImageProvider(currentUser.profilePic)
+                            : null,
+                              onBackgroundImageError: (exception, stackTrace) {
+                               debugPrint('Avatar image error: $exception');
+                              },
                         ),
                       ), 
                     error: (error,stackTrace)=> const ErrorPage(), 
