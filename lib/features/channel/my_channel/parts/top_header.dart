@@ -14,7 +14,12 @@ class TopHeader extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 38,
                   backgroundColor: Colors.grey,
-                  backgroundImage: CachedNetworkImageProvider(user.profilePic),
+                  backgroundImage: user.profilePic.isNotEmpty
+                            ? CachedNetworkImageProvider(user.profilePic)
+                            : null,
+                              onBackgroundImageError: (exception, stackTrace) {
+                               debugPrint('Avatar image error: $exception');
+                              },
                 ),
               ),
               Padding(
