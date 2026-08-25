@@ -1,7 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/features/auth/model/user_model.dart';
 
 class TopHeader extends StatelessWidget {
-  const TopHeader({super.key});
+  final UserModel user;
+  const TopHeader({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +14,13 @@ class TopHeader extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 38,
                   backgroundColor: Colors.grey,
+                  backgroundImage: CachedNetworkImageProvider(user.profilePic),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10, bottom: 5),
                 child: Text(
-                  "place holder text",
+                  user.displayName,
                   style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),
                 ),
               ),
@@ -25,9 +29,9 @@ class TopHeader extends StatelessWidget {
                 child: RichText(text: TextSpan(
                   style: TextStyle(color: Colors.blueGrey),
                   children:[
-                    TextSpan(text:"username  " ),
-                    TextSpan(text:"no subscription  " ),
-                    TextSpan(text:"no videos  " ),
+                    TextSpan(text:"${user.username}  " ),
+                    TextSpan(text:"${user.subscriptions.length} subscriptions  " ),
+                    TextSpan(text:"${user.videos} videos  " ),
                 
                 ] )
                 ),
