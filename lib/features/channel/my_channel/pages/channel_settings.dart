@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_clone/cores/screens/error_page.dart';
 import 'package:youtube_clone/cores/screens/loader.dart';
 import 'package:youtube_clone/features/auth/provider/user_provider.dart';
+import 'package:youtube_clone/features/channel/my_channel/repository/edit_field.dart';
+import 'package:youtube_clone/features/channel/my_channel/widgets/edit_setting_dialog.dart';
 import 'package:youtube_clone/features/channel/my_channel/widgets/setting_field_item.dart';
 
 class MyChannelSettings extends ConsumerStatefulWidget {
@@ -64,20 +66,56 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
 
               SettingsItem(
                 identifier: "name", 
-                onPressed: (){}, 
+               onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => SettingsDialog(
+                            identifier: "Your New Display Name",
+                            onSave: (name) {
+                              ref
+                                  .watch(EditSettingsProvider)
+                                  .editDisplayName(name);
+                            },
+                          ),
+                        );
+                      }, 
                 value: currentUser.displayName
                 ),
                 SizedBox(height: 15,),
               SettingsItem(
                 identifier: "handle", 
-                onPressed: (){}, 
+                onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => SettingsDialog(
+                            identifier: "Your New Username",
+                            onSave: (username) {
+                              ref
+                                  .watch(EditSettingsProvider)
+                                  .editusername(username);
+                            },
+                          ),
+                        );
+                      }, 
                 value: currentUser.username
                 ),
                 SizedBox(height: 15,),
             
               SettingsItem(
-                identifier: "description", 
-                onPressed: (){}, 
+                identifier: "Description", 
+                onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => SettingsDialog(
+                            identifier: "Your New Description",
+                            onSave: (description) {
+                              ref
+                                  .watch(EditSettingsProvider)
+                                  .editDescription(description);
+                            },
+                          ),
+                        );
+                      }, 
                 value: currentUser.description
                 ),
               Padding(
