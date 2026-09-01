@@ -3,21 +3,31 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final EditSettingsProvider = Provider((ref) => EditSettingsField(
-  auth: FirebaseAuth.instance, 
-  firestore: FirebaseFirestore.instance),);
+
+final editSettingsProvider = Provider(
+  (ref) => EditSettingsField(
+    firestore: FirebaseFirestore.instance,
+    auth: FirebaseAuth.instance,
+  ),
+);
+
+
+
 
 class EditSettingsField{
-  final FirebaseAuth auth;
   final FirebaseFirestore firestore;
+  final FirebaseAuth auth;
+  
 
   EditSettingsField({
+    required this.firestore,
     required this.auth, 
-    required this.firestore
+    
     });
-  editDisplayName(displayName)async{
+  
+  editDisplayName(displayName) async {
     await firestore.collection("users").doc(auth.currentUser!.uid).update({
-      "displayName":displayName,
+      "displayName": displayName,
     });
   }
 

@@ -73,7 +73,7 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
                             identifier: "Your New Display Name",
                             onSave: (name) {
                               ref
-                                  .watch(EditSettingsProvider)
+                                  .watch(editSettingsProvider)
                                   .editDisplayName(name);
                             },
                           ),
@@ -91,7 +91,7 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
                             identifier: "Your New Username",
                             onSave: (username) {
                               ref
-                                  .watch(EditSettingsProvider)
+                                  .watch(editSettingsProvider)
                                   .editusername(username);
                             },
                           ),
@@ -110,7 +110,7 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
                             identifier: "Your New Description",
                             onSave: (description) {
                               ref
-                                  .watch(EditSettingsProvider)
+                                  .watch(editSettingsProvider)
                                   .editDescription(description);
                             },
                           ),
